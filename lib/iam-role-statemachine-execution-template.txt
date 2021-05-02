@@ -7,7 +7,7 @@
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "apigateway.amazonaws.com"
+            "Service": "states.[region].amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
@@ -15,18 +15,10 @@
     },
     "Policies": [
       {
-        "PolicyName": "apigatewaytostepfunctions",
+        "PolicyName": "[PolicyName]",
         "PolicyDocument": {
           "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Effect": "Allow",
-              "Action": [
-                "states:StartExecution"
-              ],
-              "Resource": "*"
-            }
-          ]
+          "Statement": [Statements]
         }
       }
     ]
